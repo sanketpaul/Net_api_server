@@ -36,6 +36,15 @@ app.get('/movies/:mid',(req,res)=>{
         res.send(result)
     })
 })
+app.get('/video/:vid',(req,res)=>{
+    let vid =Number(req.params.vid)
+    db.collection('movies').find({id:vid}).toArray((err,result)=>{
+        if(err) throw err
+        res.send(result)
+    })
+})
+
+
 
 
 
